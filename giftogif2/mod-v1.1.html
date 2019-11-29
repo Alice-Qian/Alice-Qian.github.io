@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="dist/libgif.js"></script>
+    <script src="./dist/gif.js"></script>
+    <script src="./dist/giftogif2-v1.1.min.js"></script>
+    <style>
+      canvas {
+        width: 300px;
+        height: 300px;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>选择文件<input type="file" OnChange="handleUpload(event)" /></div>
+    <div>选择背景<input type="file" OnChange="handleUpload(event,'bg')" /></div>
+    <div><button OnClick="startDraw()">开始绘制</button></div>
+  </body>
+  <script>
+    let files = [];
+    function handleUpload(e, type) {
+      files.push({
+        file: e.path[0].files[0],
+        type
+      });
+    }
+
+    function startDraw() {
+      new GIFTOGIF2({
+        files: files,
+        stepX: 10,
+        direction: "x",
+        width: 60,
+        height: 30
+      });
+    }
+  </script>
+</html>
