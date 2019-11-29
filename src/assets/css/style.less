@@ -1,0 +1,67 @@
+@images: "https://cdn.fairgame.cn/bank/";
+
+@themeColor: red;
+@btnColor: #ef5c48;
+@bgColor: #f0f0f0;
+@bgImg: "@{images}/main/home_icon_project_zhiku_framework.png";
+
+.bgColor {
+  background-color: @bgColor;
+}
+
+.bgImg {
+  background: url(@bgImg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.panel-scroll() {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.panel-mask(@width, @height, @zIndex, @bgcolor) {
+  width: @width;
+  height: @height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: @zIndex;
+  background-color: @bgcolor;
+}
+
+.panel-center (@zIndex) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: @zIndex;
+}
+
+.animated(@s) {
+  animation-duration: @s;
+  animation-fill-mode: both;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+.delay(@s) {
+  animation-delay: @s;
+}
+
+
+// felx 布局
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
